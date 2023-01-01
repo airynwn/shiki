@@ -1,0 +1,21 @@
+{
+  "name": "shiki",
+  "version": "1.0.0",
+  "main": "bot.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "shiki"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
