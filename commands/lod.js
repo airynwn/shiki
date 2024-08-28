@@ -87,7 +87,7 @@ function getChannels(time, hour) {
 
 // * ----------------------------- *
 
-function createLodEmbed() {
+function createLodEmbed(interaction) {
     let time = new Date();
     let hour = time.getHours();
     let min = time.getMinutes();
@@ -98,7 +98,7 @@ function createLodEmbed() {
     return new EmbedBuilder()
 	.setColor(14548736)
 	.setTitle('Horarios de LoD')
-	.setDescription(`Son las ${now}.`)
+	.setDescription(`Hola, ${interaction.user}. Son las ${now}.`)
 	.addFields(
 		{ name: '\u200B', value: '\u200B' },
 		{ name: 'Actual', value: hoursPassed < 2 ? `Hay LoD ahora mismo en ${getChannels("current", hour)}. ${currentLod(min, hour)}` : `El próximo LoD es a las ${nextLod}:00 en ${getChannels("next", hour)}.`, inline: true },
@@ -114,6 +114,6 @@ module.exports = {
 	async execute(interaction) {
 		// await interaction.reply('https://cdn-longterm.mee6.xyz/plugins/embeds/images/628543142819528714/3e2963015e4118ab82c55bf85df0c4e8dfb34ef6737d8fa87c3df78df9a090ef.png');
         // await interaction.channel.send({embeds: [lodEmbed]});
-        await interaction.reply({embeds: [createLodEmbed()]});
+        await interaction.reply({embeds: [createLodEmbed(interaction)]});
 	},
 };
